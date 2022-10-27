@@ -1,0 +1,15 @@
+.prod-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-info{
+    width: 50%;
+    /* background-color: yellow; */
+}
+
+.prod-container img{
+    height: 200px;
+    width: 200px;
+    
+}
