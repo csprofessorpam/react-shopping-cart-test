@@ -1,0 +1,29 @@
+.cart-headings{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.cart-headings h4{
+    width: 20%;
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 30px;
+}
+
+.cart-item img{
+    width: 80px;
+}
+
+.cart-item h5{
+    width: 25%;
+}
+.btn-trash{
+    border: none;
+    background-color: white;
+}

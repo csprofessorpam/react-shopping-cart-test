@@ -3,7 +3,7 @@ import './Homepage.css';
 import Product from '../Product/Product';
 import axios from 'axios';
 
-function Homepage() {
+function Homepage(props) {
 
     //create state for Products
     const [products, setProducts] = React.useState([
@@ -54,7 +54,11 @@ function Homepage() {
   return (
     <div className="product-container">
         {/* <button onClick={fetchProducts}>Fetch Products</button> */}
-        {products.map(
+        {products.filter(
+            item=> props.productSearchValue === ''? 
+            item : 
+            item.title.toLowerCase().includes(props.productSearchValue.toLowerCase()) ? item : null
+        ).map(
             function(item){
                 return <Product 
                 key={item.id}
