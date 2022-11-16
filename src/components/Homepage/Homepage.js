@@ -49,16 +49,22 @@ function Homepage(props) {
             fetchProducts()
         }, []
     )
-
+    
+    const filterProducts = () =>{
+        if (props.productSearchValue === ''){
+            return products;
+        }
+        //if here then filter
+        const newProducts = products.filter(
+            item => item.title.toLowerCase().includes(props.productSearchValue.toLowerCase())
+            )
+        return newProducts;
+    }
 
   return (
     <div className="product-container">
         {/* <button onClick={fetchProducts}>Fetch Products</button> */}
-        {products.filter(
-            item=> props.productSearchValue === ''? 
-            item : 
-            item.title.toLowerCase().includes(props.productSearchValue.toLowerCase()) ? item : null
-        ).map(
+        {filterProducts().map(
             function(item){
                 return <Product 
                 key={item.id}
@@ -81,3 +87,9 @@ export default Homepage;
 //         <div>Homepage</div>
 //     )
 // }
+
+// products.filter(
+//     item=> props.productSearchValue === ''? 
+//     item : 
+//     item.title.toLowerCase().includes(props.productSearchValue.toLowerCase()) ? item : null
+// )

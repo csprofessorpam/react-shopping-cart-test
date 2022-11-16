@@ -47,8 +47,9 @@ function Navbar(props) {
         <input type="text"
         placeholder="search for your product"
         value = {navSearchInput}
-        onChange = {(event)=>handleNavbarInput(event.target.value)}
-        // onChange = {(event)=> setNavSearchInput(event.target.value)}
+        
+         onChange = {(event)=>handleNavbarInput(event.target.value)}
+         //onChange = {(event)=> setNavSearchInput(event.target.value)}
         />
         
         <button>Submit Search</button>
